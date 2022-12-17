@@ -9,24 +9,14 @@ import SwiftUI
 
 struct MainPageView: View {
     
-    @State var text: String = ""
+    enum Field {
+      case inputField
+      case none
+    }
     
-    var todoList: [String] = [
-        "To do 1",
-        "To do 2",
-        "To do 3",
-        "To do 4",
-        "To do 5",
-        "To do 6",
-        "To do 7",
-        "To do 8",
-        "To do 9",
-        "To do 10",
-        "To do 11",
-        "To do 12",
-        "To do 13",
-        "To do 14",
-    ]
+    @StateObject private var todoViewModel: TodoViewModel = TodoViewModel()
+    
+    @FocusState private var focusField: Field?
     
     var body: some View {
         VStack{
@@ -36,16 +26,21 @@ struct MainPageView: View {
             Text("Todo List")
                 .customTitleText()
             
-            TextField("Enter your To - Do", text: $text)
+            TextField("Enter your To - Do", text: $todoViewModel.todoInputed)
                 .customLargeTextField()
+                .focused($focusField, equals: .inputField)
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
                 .padding(.bottom, 10)
+                .onSubmit {
+                    todoViewModel.todoEnter()
+                    focusField = .inputField
+                }
             Spacer(minLength: 0)
             
             
             List{
-                ForEach(todoList, id: \.self){ todo in
+                ForEach(todoViewModel.todoList, id: \.self){ todo in
                     Button {
                         print("clicked")
                     } label: {
@@ -55,6 +50,9 @@ struct MainPageView: View {
                     
                 }
             }
+        }
+        .onAppear{
+            focusField = .inputField
         }
     }
 }
