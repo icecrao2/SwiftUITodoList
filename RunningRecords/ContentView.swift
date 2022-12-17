@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var onLogoAnimation: Bool = true
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        switch onLogoAnimation{
+        case true:
+            LoadingView()
+                .onAppear{
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        onLogoAnimation = false
+                        print("end")
+                    })
+                }
+        case false:
+            MainPageView()
+            
         }
-        .padding()
+        
     }
 }
 
