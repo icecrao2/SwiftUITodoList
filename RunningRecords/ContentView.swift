@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @State var onLogoAnimation: Bool = true
     
+    
     var body: some View {
         
         switch onLogoAnimation{
@@ -28,6 +29,7 @@ struct ContentView: View {
         }
         
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

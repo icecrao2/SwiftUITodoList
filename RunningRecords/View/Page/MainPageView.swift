@@ -9,14 +9,17 @@ import SwiftUI
 
 struct MainPageView: View {
     
-    enum Field {
-      case inputField
-      case none
-    }
-    
     @StateObject private var todoViewModel: TodoViewModel = TodoViewModel()
-    
     @FocusState private var focusField: Field?
+    
+    @FetchRequest(
+      entity: Todo.entity(),
+      sortDescriptors: [
+        NSSortDescriptor(keyPath: \Todo.todoTitle, ascending: true)
+      ]
+      //predicate: NSPredicate(format: "genre contains 'Action'")
+    ) var todos: FetchedResults<Todo>
+    
     
     var body: some View {
         VStack{
@@ -47,13 +50,21 @@ struct MainPageView: View {
                         Text(todo)
                             .customListText()
                     }
-                    
+                }
+                .onDelete { IndexSet in
+                    todoViewModel.todoRemove(at: IndexSet)
                 }
             }
         }
         .onAppear{
+            todoViewModel.todoInitial()
             focusField = .inputField
         }
+    }
+    
+    enum Field {
+      case inputField
+      case none
     }
 }
 
