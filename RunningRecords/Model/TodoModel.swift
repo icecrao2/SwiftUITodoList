@@ -8,12 +8,12 @@
 import Foundation
 
 
-struct TodoModel {
+struct TodoModel: CoreDataModelProtocol {
     
     let todoTitle: String
-    let todoDetail: String
-    let todoIsCompleted: Bool = false
-    let writenDate: Date
-    let completeDate: Date
+    let todoDetail: String?
+    let todoIsCompleted: Bool
+    let startDate: Date
+    let completeDate: Date?
     
 }

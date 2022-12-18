@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainPageView: View {
     
-    @StateObject private var todoViewModel: TodoViewModel = TodoViewModel()
+    @StateObject private var viewModel: MainPageViewModel = MainPageViewModel()
     @FocusState private var focusField: Field?
     
     @FetchRequest(
@@ -29,21 +29,21 @@ struct MainPageView: View {
             Text("Todo List")
                 .customTitleText()
             
-            TextField("Enter your To - Do", text: $todoViewModel.todoInputed)
+            TextField("Enter your To - Do", text: $viewModel.todoInputed)
                 .customLargeTextField()
                 .focused($focusField, equals: .inputField)
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
                 .padding(.bottom, 10)
                 .onSubmit {
-                    todoViewModel.todoEnter()
+                    viewModel.todoEnter()
                     focusField = .inputField
                 }
             Spacer(minLength: 0)
             
             
             List{
-                ForEach(todoViewModel.todoList, id: \.self){ todo in
+                ForEach(viewModel.todoList, id: \.self){ todo in
                     Button {
                         print("clicked")
                     } label: {
@@ -52,12 +52,12 @@ struct MainPageView: View {
                     }
                 }
                 .onDelete { IndexSet in
-                    todoViewModel.todoRemove(at: IndexSet)
+                    viewModel.todoRemove(at: IndexSet)
                 }
             }
         }
         .onAppear{
-            todoViewModel.todoInitial()
+            viewModel.todoRefresh()
             focusField = .inputField
         }
     }
