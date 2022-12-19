@@ -126,7 +126,7 @@
 			children = (
 				D08626DB294E23020097EDCD /* CoreData */,
 				D08626D8294E1CE70097EDCD /* Repository */,
-				D08626D2294E17320097EDCD /* Service */,
+				D08627AA295093460097EDCD /* Service */,
 				D0853102294CC5AB00777EED /* ViewModel */,
 				D0853101294CC5A700777EED /* View */,
 				D0853103294CC5AE00777EED /* Model */,
@@ -219,13 +219,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D08626D2294E17320097EDCD /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		D08626D8294E1CE70097EDCD /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +259,13 @@
 				D086273329507E9B0097EDCD /* LabelTextField.swift */,
 			);
 			path = Molecules;
+			sourceTree = "<group>";
+		};
+		D08627AA295093460097EDCD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
