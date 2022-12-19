@@ -19,6 +19,7 @@ struct AddPage: View {
     
     var body: some View {
         VStack{
+            
             Header()
             
             TextField("Title", text: $todoTitle)

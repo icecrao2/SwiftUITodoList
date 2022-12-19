@@ -27,7 +27,7 @@ extension TextField {
     func customLargeTextField() -> some View {
         self
             .foregroundColor(.black)
-            .lineLimit(12, reservesSpace: true)
+            .lineLimit(8, reservesSpace: true)
             .padding(5)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
