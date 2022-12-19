@@ -22,26 +22,17 @@ struct MainPageView: View {
     
     
     var body: some View {
-        VStack{
+        NavigationStack{
             
-            SmallIconView()
+            Header()
             
-            Text("Todo List")
-                .customTitleText()
-            
-            TextField("Enter your To - Do", text: $viewModel.todoInputed)
-                .customLargeTextField()
-                .focused($focusField, equals: .inputField)
-                .padding(.leading, 10)
-                .padding(.trailing, 10)
-                .padding(.bottom, 10)
-                .onSubmit {
-                    viewModel.todoEnter()
-                    focusField = .inputField
-                }
-            Spacer(minLength: 0)
-            
-            
+            NavigationLink {
+                AddPage()
+            } label: {
+                Text("Add Todo!")
+                    .customButtonText()
+                
+            }
             List{
                 ForEach(viewModel.todoList, id: \.self){ todo in
                     Button {

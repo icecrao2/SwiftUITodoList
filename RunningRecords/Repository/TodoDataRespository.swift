@@ -11,29 +11,15 @@ import CoreData
 
 class TodoDataRepository: TodoDataRepositoryProtocol {
     
-    
     private var managedObjectContext = PersistenceController.shared.container.viewContext
     
     private var todos = [Todo]()
     
-    func readTodoAll() -> [Todo] {
+    func readTodoAll() -> Void {
         
-        fetchTodo()
+        self.fetchTodo()
         
-        var todoModels: [TodoModel] = []
-        
-        todos.forEach { todo in
-            todoModels.append(
-                TodoModel(
-                    todoTitle: todo.todoTitle!,
-                    todoDetail: todo.todoDetail ?? "",
-                    todoIsCompleted: todo.todoIsCompleted,
-                    startDate: todo.writenDate!,
-                    completeDate: todo.completeDate
-                )
-            )
-        }
-        return todos
+       // return todos
     }
     
     func addTodo(title: String, detail: String) {

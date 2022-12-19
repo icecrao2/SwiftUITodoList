@@ -10,17 +10,31 @@ import SwiftUI
 
 extension TextField {
     
+    
+    func customDefaultTExtField() -> some View {
+        self
+            .foregroundColor(.black)
+            .frame(height: 40)
+            .padding(5)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(.gray, lineWidth: 0.5)
+            )
+            .font(Font.system(size: 25))
+            .fontWeight(Font.Weight.bold)
+    }
+    
     func customLargeTextField() -> some View {
         self
-            .font(Font.system(size: 30))
-            .fontWeight(Font.Weight.bold)
-            .frame(height: 60)
-            .padding(.leading, 20)
+            .foregroundColor(.black)
+            .lineLimit(12, reservesSpace: true)
+            .padding(5)
             .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(.black.opacity(0.5), lineWidth: 0.5)
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(.gray, lineWidth: 0.5)
             )
-            
+            .font(Font.system(size: 25))
+            .fontWeight(Font.Weight.bold)
     }
 }
 

@@ -17,10 +17,8 @@ class MainPageViewModel: ObservableObject {
         
     ]
     
-    private var useCase = TodoDataUseCase(repository: TodoDataRepository(), mapper: TodoDataMapper())
-    
     func todoRefresh() {
-        todoList = useCase.getAllTodoDataTitle()
+        
     }
     
     func todoEnter() {
@@ -28,8 +26,8 @@ class MainPageViewModel: ObservableObject {
 //            title: todoInputed,
 //            detail: "detail"
 //        )
-//        todoList.append(todoInputed)
-//        todoInputed = ""
+        todoList.append(todoInputed)
+        todoInputed = ""
     }
     
     func todoRemove(at offsets: IndexSet) {

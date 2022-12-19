@@ -19,6 +19,6 @@ import Foundation
 
 protocol TodoDataRepositoryProtocol{
     
-    func readTodoAll() -> [Todo]
+    func addTodo(title: String, detail: String)
     
 }

@@ -14,7 +14,6 @@
 		D08530D7294BF18600777EED /* RunningRecordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08530D6294BF18600777EED /* RunningRecordsTests.swift */; };
 		D08530E1294BF18600777EED /* RunningRecordsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08530E0294BF18600777EED /* RunningRecordsUITests.swift */; };
 		D08530E3294BF18600777EED /* RunningRecordsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08530E2294BF18600777EED /* RunningRecordsUITestsLaunchTests.swift */; };
-		D08626C1294DB2610097EDCD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08626C0294DB2610097EDCD /* LoadingView.swift */; };
 		D08626C3294DB2840097EDCD /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08626C2294DB2840097EDCD /* IconView.swift */; };
 		D08626C5294DC09B0097EDCD /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08626C4294DC09B0097EDCD /* MainPageView.swift */; };
 		D08626C8294DC3310097EDCD /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08626C7294DC3310097EDCD /* TextFieldExtension.swift */; };
@@ -25,10 +24,11 @@
 		D08626DD294E23120097EDCD /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08626DC294E23120097EDCD /* PersistenceController.swift */; };
 		D08626DF294E23A20097EDCD /* TodoDataRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08626DE294E23A20097EDCD /* TodoDataRespository.swift */; };
 		D08626E7294F21390097EDCD /* TodoDataRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08626E6294F21390097EDCD /* TodoDataRepositoryProtocol.swift */; };
-		D08626F1294F31460097EDCD /* TodoDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08626F0294F31460097EDCD /* TodoDataUseCase.swift */; };
-		D08626F6294F3ADF0097EDCD /* TodoDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08626F5294F3ADF0097EDCD /* TodoDataMapper.swift */; };
-		D08626F9294F3CB40097EDCD /* MappingToModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08626F8294F3CB40097EDCD /* MappingToModelProtocol.swift */; };
-		D0862700294F409F0097EDCD /* TodoDataModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08626FF294F409F0097EDCD /* TodoDataModelProtocol.swift */; };
+		D0862702294F4E0C0097EDCD /* TodoDataModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0862701294F4E0C0097EDCD /* TodoDataModelProtocol.swift */; };
+		D086272F29507C3C0097EDCD /* AddPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D086272E29507C3C0097EDCD /* AddPage.swift */; };
+		D086273229507E4C0097EDCD /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = D086273129507E4C0097EDCD /* Header.swift */; };
+		D086273429507E9B0097EDCD /* LabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D086273329507E9B0097EDCD /* LabelTextField.swift */; };
+		D086273629508B930097EDCD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D086273529508B930097EDCD /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +59,6 @@
 		D08530DC294BF18600777EED /* RunningRecordsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunningRecordsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08530E0294BF18600777EED /* RunningRecordsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningRecordsUITests.swift; sourceTree = "<group>"; };
 		D08530E2294BF18600777EED /* RunningRecordsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningRecordsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D08626C0294DB2610097EDCD /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		D08626C2294DB2840097EDCD /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		D08626C4294DC09B0097EDCD /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		D08626C7294DC3310097EDCD /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -70,10 +69,11 @@
 		D08626DC294E23120097EDCD /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		D08626DE294E23A20097EDCD /* TodoDataRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataRespository.swift; sourceTree = "<group>"; };
 		D08626E6294F21390097EDCD /* TodoDataRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataRepositoryProtocol.swift; sourceTree = "<group>"; };
-		D08626F0294F31460097EDCD /* TodoDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataUseCase.swift; sourceTree = "<group>"; };
-		D08626F5294F3ADF0097EDCD /* TodoDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataMapper.swift; sourceTree = "<group>"; };
-		D08626F8294F3CB40097EDCD /* MappingToModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingToModelProtocol.swift; sourceTree = "<group>"; };
-		D08626FF294F409F0097EDCD /* TodoDataModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataModelProtocol.swift; sourceTree = "<group>"; };
+		D0862701294F4E0C0097EDCD /* TodoDataModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataModelProtocol.swift; sourceTree = "<group>"; };
+		D086272E29507C3C0097EDCD /* AddPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPage.swift; sourceTree = "<group>"; };
+		D086273129507E4C0097EDCD /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		D086273329507E9B0097EDCD /* LabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextField.swift; sourceTree = "<group>"; };
+		D086273529508B930097EDCD /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,9 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				D08626DB294E23020097EDCD /* CoreData */,
-				D08626F4294F3AC00097EDCD /* Mapper */,
 				D08626D8294E1CE70097EDCD /* Repository */,
-				D08626D2294E17320097EDCD /* UseCase */,
+				D08626D2294E17320097EDCD /* Service */,
 				D0853102294CC5AB00777EED /* ViewModel */,
 				D0853101294CC5A700777EED /* View */,
 				D0853103294CC5AE00777EED /* Model */,
@@ -168,6 +167,7 @@
 		D0853101294CC5A700777EED /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D086273029507E390097EDCD /* Molecules */,
 				D08626C6294DC2E70097EDCD /* Page */,
 				D08626AC294CC7010097EDCD /* Atoms */,
 			);
@@ -203,8 +203,9 @@
 		D08626C6294DC2E70097EDCD /* Page */ = {
 			isa = PBXGroup;
 			children = (
-				D08626C0294DB2610097EDCD /* LoadingView.swift */,
 				D08626C4294DC09B0097EDCD /* MainPageView.swift */,
+				D086272E29507C3C0097EDCD /* AddPage.swift */,
+				D086273529508B930097EDCD /* LoadingView.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -218,12 +219,11 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D08626D2294E17320097EDCD /* UseCase */ = {
+		D08626D2294E17320097EDCD /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				D08626F0294F31460097EDCD /* TodoDataUseCase.swift */,
 			);
-			path = UseCase;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		D08626D8294E1CE70097EDCD /* Repository */ = {
@@ -251,29 +251,21 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		D08626F4294F3AC00097EDCD /* Mapper */ = {
-			isa = PBXGroup;
-			children = (
-				D08626F7294F3CA20097EDCD /* Protocols */,
-				D08626F5294F3ADF0097EDCD /* TodoDataMapper.swift */,
-			);
-			path = Mapper;
-			sourceTree = "<group>";
-		};
-		D08626F7294F3CA20097EDCD /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				D08626FF294F409F0097EDCD /* TodoDataModelProtocol.swift */,
-				D08626F8294F3CB40097EDCD /* MappingToModelProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		D08626FE294F40930097EDCD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				D0862701294F4E0C0097EDCD /* TodoDataModelProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D086273029507E390097EDCD /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				D086273129507E4C0097EDCD /* Header.swift */,
+				D086273329507E9B0097EDCD /* LabelTextField.swift */,
+			);
+			path = Molecules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,22 +398,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D086273429507E9B0097EDCD /* LabelTextField.swift in Sources */,
+				D086273229507E4C0097EDCD /* Header.swift in Sources */,
 				D08626D4294E17430097EDCD /* TodoModel.swift in Sources */,
 				D08626CE294DCFB40097EDCD /* MainPageViewModel.swift in Sources */,
+				D086273629508B930097EDCD /* LoadingView.swift in Sources */,
 				D08530C8294BF18500777EED /* ContentView.swift in Sources */,
-				D08626F6294F3ADF0097EDCD /* TodoDataMapper.swift in Sources */,
-				D08626C1294DB2610097EDCD /* LoadingView.swift in Sources */,
 				D08626DD294E23120097EDCD /* PersistenceController.swift in Sources */,
-				D08626F9294F3CB40097EDCD /* MappingToModelProtocol.swift in Sources */,
 				D08626C3294DB2840097EDCD /* IconView.swift in Sources */,
 				D08626CC294DC8620097EDCD /* TextExtension.swift in Sources */,
 				D08626E7294F21390097EDCD /* TodoDataRepositoryProtocol.swift in Sources */,
 				D08626C8294DC3310097EDCD /* TextFieldExtension.swift in Sources */,
-				D08626F1294F31460097EDCD /* TodoDataUseCase.swift in Sources */,
+				D0862702294F4E0C0097EDCD /* TodoDataModelProtocol.swift in Sources */,
 				D08626DF294E23A20097EDCD /* TodoDataRespository.swift in Sources */,
 				D08626D7294E1ADD0097EDCD /* Model.xcdatamodeld in Sources */,
-				D0862700294F409F0097EDCD /* TodoDataModelProtocol.swift in Sources */,
 				D08626C5294DC09B0097EDCD /* MainPageView.swift in Sources */,
+				D086272F29507C3C0097EDCD /* AddPage.swift in Sources */,
 				D08530C6294BF18500777EED /* RunningRecordsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

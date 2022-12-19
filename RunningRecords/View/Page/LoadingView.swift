@@ -13,8 +13,7 @@ struct LoadingView: View {
             BigIconView()
             
             Text("To do List")
-                .font(.largeTitle)
-                .fontWeight(.bold)
+                .customTitleText()
                 .padding()
             
         }

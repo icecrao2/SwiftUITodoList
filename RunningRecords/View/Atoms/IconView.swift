@@ -9,42 +9,6 @@ import SwiftUI
 
 
 
-protocol IconViewProtocol {
-    
-    var logoText: String {get set}
-    
-    var radius: CGFloat {get set}
-    var fontSize: CGFloat {get set}
-    
-    var duration: CGFloat {get set}
-    
-    var backgroundColor: Color {get set}
-    
-    var isStart: Bool {get set}
-    func onAnimation() -> Void
-}
-
-
-extension IconViewProtocol where Self: View {
-    
-    var body: some View {
-        ZStack {
-            Circle()
-                .trim(from: 0, to: isStart ? 1 : 0)
-                .fill(backgroundColor)
-                .rotationEffect(.degrees(-90))
-                .animation(.easeInOut(duration: duration), value: isStart)
-                .frame(width: radius)
-                .onAppear{
-                    onAnimation()
-                }
-            
-            Text(logoText)
-                .font(Font.system(size: fontSize))
-        }
-    }
-}
-
 
 struct BigIconView: View, IconViewProtocol {
     
@@ -82,6 +46,45 @@ struct SmallIconView: View, IconViewProtocol {
 }
 
 
+
+
+
+
+protocol IconViewProtocol {
+    
+    var logoText: String {get set}
+    
+    var radius: CGFloat {get set}
+    var fontSize: CGFloat {get set}
+    
+    var duration: CGFloat {get set}
+    
+    var backgroundColor: Color {get set}
+    
+    var isStart: Bool {get set}
+    func onAnimation() -> Void
+}
+
+
+extension IconViewProtocol where Self: View {
+    
+    var body: some View {
+        ZStack {
+            Circle()
+                .trim(from: 0, to: isStart ? 1 : 0)
+                .fill(backgroundColor)
+                .rotationEffect(.degrees(-90))
+                .animation(.easeInOut(duration: duration), value: isStart)
+                .frame(width: radius)
+                .onAppear{
+                    onAnimation()
+                }
+            
+            Text(logoText)
+                .font(Font.system(size: fontSize))
+        }
+    }
+}
 
 struct IconView_Previews: PreviewProvider {
     static var previews: some View {
