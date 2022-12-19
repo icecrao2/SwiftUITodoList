@@ -9,51 +9,53 @@ import SwiftUI
 
 struct MainPageView: View {
     
-    enum Field {
-      case inputField
-      case none
-    }
-    
-    @StateObject private var todoViewModel: TodoViewModel = TodoViewModel()
-    
+    @StateObject private var viewModel: MainPageViewModel = MainPageViewModel()
     @FocusState private var focusField: Field?
     
+    @FetchRequest(
+      entity: Todo.entity(),
+      sortDescriptors: [
+        NSSortDescriptor(keyPath: \Todo.todoTitle, ascending: true)
+      ]
+      //predicate: NSPredicate(format: "genre contains 'Action'")
+    ) var todos: FetchedResults<Todo>
+    
+    
     var body: some View {
-        VStack{
+        NavigationStack{
             
-            SmallIconView()
+            Header()
             
-            Text("Todo List")
-                .customTitleText()
-            
-            TextField("Enter your To - Do", text: $todoViewModel.todoInputed)
-                .customLargeTextField()
-                .focused($focusField, equals: .inputField)
-                .padding(.leading, 10)
-                .padding(.trailing, 10)
-                .padding(.bottom, 10)
-                .onSubmit {
-                    todoViewModel.todoEnter()
-                    focusField = .inputField
-                }
-            Spacer(minLength: 0)
-            
-            
+            NavigationLink {
+                AddPage()
+            } label: {
+                Text("Add Todo!")
+                    .customButtonText()
+                
+            }
             List{
-                ForEach(todoViewModel.todoList, id: \.self){ todo in
+                ForEach(viewModel.todoList, id: \.self){ todo in
                     Button {
                         print("clicked")
                     } label: {
                         Text(todo)
                             .customListText()
                     }
-                    
+                }
+                .onDelete { IndexSet in
+                    viewModel.todoRemove(at: IndexSet)
                 }
             }
         }
         .onAppear{
+            viewModel.todoRefresh()
             focusField = .inputField
         }
+    }
+    
+    enum Field {
+      case inputField
+      case none
     }
 }
 
