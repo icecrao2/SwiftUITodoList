@@ -12,9 +12,10 @@ struct AddPage: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @StateObject var viewModel: AddPageViewModel = AddPageViewModel()
-    
     @GestureState private var dragOffset = CGSize.zero
     
+    @State private var startCalandarID: UUID = UUID()
+    @State private var endCalandarID: UUID = UUID()
     
     var body: some View {
         VStack{
@@ -27,9 +28,19 @@ struct AddPage: View {
             
             DatePicker("Start Date", selection: $viewModel.startDate, in: Date()..., displayedComponents: .date)
                     .padding(.horizontal)
+                    .id(startCalandarID)
+                    .onChange(of: viewModel.startDate) { _ in
+                        startCalandarID = UUID()
+                    }
                 
             DatePicker("End Date", selection: $viewModel.completeDate, in: viewModel.startDate..., displayedComponents: .date)
-                    .padding(.horizontal)
+                .padding(.horizontal)
+                .id(endCalandarID)
+                .onChange(of: viewModel.completeDate) { _ in
+                    print(viewModel.completeDate)
+                    endCalandarID = UUID()
+                }
+                    
             
             TextField("", text: $viewModel.todoDetail, axis: .vertical)
                 .customLargeTextField()
