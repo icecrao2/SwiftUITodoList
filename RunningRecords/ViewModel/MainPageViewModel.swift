@@ -12,31 +12,19 @@ import CoreData
 //MainPage를 컨트롤하는 클래스
 class MainPageViewModel: ObservableObject {
     
-    @Published var todoInputed: String = ""
-    @Published var todoList: [String] = [
-        
-    ]
+    private var service: TodoListService = TodoListService()
+    
+    @Published var todoList: [String] = []
     
     func todoRefresh() {
-        
-    }
-    
-    func todoEnter() {
-//        repo.addTodo(
-//            title: todoInputed,
-//            detail: "detail"
-//        )
-        todoList.append(todoInputed)
-        todoInputed = ""
+        todoList = []
+        todoList = service.getAllTitles()
     }
     
     func todoRemove(at offsets: IndexSet) {
-//
-//        todoList.remove(atOffsets: offsets)
-//        repo.deleteTodo(at: offsets)
+
+        todoList.remove(atOffsets: offsets)
+        service.deleteTodo(at: offsets)
         
     }
-    
-
-    
 }
