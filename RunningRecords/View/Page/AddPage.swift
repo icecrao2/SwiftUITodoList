@@ -9,41 +9,39 @@ import SwiftUI
 
 struct AddPage: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
+    @StateObject var viewModel: AddPageViewModel = AddPageViewModel()
     
-    @State var todoTitle: String = ""
-    @State var todoDetail: String = ""
-    @State var todoIsCompleted: Bool = false
-    @State var startDate: Date = Date()
-    @State var completeDate: Date = Date()
+    @GestureState private var dragOffset = CGSize.zero
+    
     
     var body: some View {
         VStack{
+            
             Header()
             
-            TextField("Title", text: $todoTitle)
+            TextField("Title", text: $viewModel.todoTitle)
                 .customDefaultTExtField()
                 .padding(.horizontal)
             
-                DatePicker("Start Date", selection: $startDate, in: Date()..., displayedComponents: .date)
+            DatePicker("Start Date", selection: $viewModel.startDate, in: Date()..., displayedComponents: .date)
                     .padding(.horizontal)
                 
-                DatePicker("End Date", selection: $completeDate, in: startDate..., displayedComponents: .date)
+            DatePicker("End Date", selection: $viewModel.completeDate, in: viewModel.startDate..., displayedComponents: .date)
                     .padding(.horizontal)
             
-            
-            TextField("", text: $todoDetail, axis: .vertical)
+            TextField("", text: $viewModel.todoDetail, axis: .vertical)
                 .customLargeTextField()
                 .padding(.horizontal)
             
             Button {
-            
+                viewModel.addTodo()
+                self.presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("Submit")
                     .customButtonText()
             }
-
-            
         }
     }
 }

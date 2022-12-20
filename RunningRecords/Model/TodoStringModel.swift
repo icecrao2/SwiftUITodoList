@@ -8,12 +8,12 @@
 import Foundation
 
 
-struct TodoModel: TodoDataModelProtocol {
+struct TodoStringModel: TodoDataModelProtocol {
     
     let todoTitle: String
     let todoDetail: String?
     let todoIsCompleted: Bool
-    let startDate: Date
-    let completeDate: Date?
+    let startDate: String
+    let completeDate: String?
     
 }

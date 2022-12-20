@@ -19,6 +19,8 @@ import Foundation
 
 protocol TodoDataRepositoryProtocol{
     
-    func addTodo(title: String, detail: String)
-    
+    func addTodo(model: TodoModel)
+    func readTodoAll() -> [TodoModel]
+    func deleteTodo(at offsets: IndexSet)
+
 }

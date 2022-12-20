@@ -12,15 +12,6 @@ struct MainPageView: View {
     @StateObject private var viewModel: MainPageViewModel = MainPageViewModel()
     @FocusState private var focusField: Field?
     
-    @FetchRequest(
-      entity: Todo.entity(),
-      sortDescriptors: [
-        NSSortDescriptor(keyPath: \Todo.todoTitle, ascending: true)
-      ]
-      //predicate: NSPredicate(format: "genre contains 'Action'")
-    ) var todos: FetchedResults<Todo>
-    
-    
     var body: some View {
         NavigationStack{
             
@@ -46,11 +37,13 @@ struct MainPageView: View {
                     viewModel.todoRemove(at: IndexSet)
                 }
             }
+            .onAppear{
+                print("refresh@")
+                viewModel.todoRefresh()
+                focusField = .inputField
+            }
         }
-        .onAppear{
-            viewModel.todoRefresh()
-            focusField = .inputField
-        }
+
     }
     
     enum Field {
