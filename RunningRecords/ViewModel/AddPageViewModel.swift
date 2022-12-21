@@ -21,6 +21,7 @@ class AddPageViewModel: ObservableObject {
     func addTodo(){
         
         let todoModel: TodoModel = TodoModel(
+            id: UUID(),
             todoTitle: todoTitle,
             todoDetail: todoDetail,
             todoIsCompleted: todoIsCompleted,

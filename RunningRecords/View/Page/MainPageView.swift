@@ -10,7 +10,6 @@ import SwiftUI
 struct MainPageView: View {
     
     @StateObject private var viewModel: MainPageViewModel = MainPageViewModel()
-    @FocusState private var focusField: Field?
     
     var body: some View {
         NavigationStack{
@@ -22,14 +21,12 @@ struct MainPageView: View {
             } label: {
                 Text("Add Todo!")
                     .customButtonText()
-                
             }
             List{
-                ForEach(viewModel.todoList, id: \.self){ todo in
-                    Button {
-                        print("clicked")
-                    } label: {
-                        Text(todo)
+                ForEach(viewModel.todoList.indices, id: \.self){ index in
+                    
+                    NavigationLink(destination: DetailView(indexSets: [index])){
+                        Text(viewModel.todoList[index])
                             .customListText()
                     }
                 }
@@ -40,7 +37,6 @@ struct MainPageView: View {
             .onAppear{
                 print("refresh@")
                 viewModel.todoRefresh()
-                focusField = .inputField
             }
         }
 

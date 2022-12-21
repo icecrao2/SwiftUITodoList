@@ -10,6 +10,7 @@ import Foundation
 
 struct TodoModel: TodoDataModelProtocol {
     
+    let id: UUID
     let todoTitle: String
     let todoDetail: String?
     let todoIsCompleted: Bool

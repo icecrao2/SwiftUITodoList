@@ -23,6 +23,7 @@ class TodoDataMapper: TodoTodoModelMapper {
     func mapping(todo: Todo) -> TodoModel {
         
         let result = TodoModel(
+            id: todo.id!,
             todoTitle: todo.todoTitle!,
             todoDetail: todo.todoDetail,
             todoIsCompleted: todo.todoIsCompleted,

@@ -19,6 +19,7 @@ class MainPageViewModel: ObservableObject {
     func todoRefresh() {
         todoList = []
         todoList = service.getAllTitles()
+        print(todoList)
     }
     
     func todoRemove(at offsets: IndexSet) {
