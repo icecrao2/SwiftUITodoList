@@ -43,6 +43,7 @@ class TodoDataStringMapper: TodoTodoStringModelMapper {
         }
         
         let result = TodoStringModel(
+            id: todo.id!,
             todoTitle: todo.todoTitle!,
             todoDetail: todo.todoDetail,
             todoIsCompleted: todo.todoIsCompleted,

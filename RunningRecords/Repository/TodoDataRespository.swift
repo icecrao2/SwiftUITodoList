@@ -12,19 +12,32 @@ import CoreData
 class TodoDataRepository: TodoDataRepositoryProtocol {
     
     private var managedObjectContext = PersistenceController.shared.container.viewContext
-    private let mapper: TodoTodoModelMapper = TodoDataMapper()
+    private let mapper:  TodoTodoStringModelMapper = TodoDataStringMapper()
+    
     private var todos = [Todo]()
     
     
-    func readTodoAll() -> [TodoModel] {
+    func readTodoAll() -> [TodoStringModel] {
         self.fetchTodo()
         let todoModels = mapper.arrayMapping(todos: todos)
         return todoModels
     }
     
+    func readTodo(at offsets: IndexSet) -> TodoStringModel {
+        self.fetchTodo()
+        var todo: Todo = Todo()
+        
+        offsets.forEach { index in
+            todo = self.todos[index]
+        }
+        
+        return mapper.mapping(todo: todo)
+    }
+    
     func addTodo(model: TodoModel) {
         let newTodo = Todo(context: managedObjectContext)
 
+        newTodo.id = UUID()
         newTodo.todoTitle = model.todoTitle
         newTodo.todoDetail = model.todoDetail
         newTodo.todoIsCompleted = false

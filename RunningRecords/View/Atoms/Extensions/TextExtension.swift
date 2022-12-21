@@ -19,7 +19,6 @@ extension Text {
     
     func customTitleText() -> Text {
         self
-            .foregroundColor(.black)
             .font(.largeTitle)
             .fontWeight(Font.Weight.heavy)
     }

@@ -29,7 +29,7 @@
 		D086273229507E4C0097EDCD /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = D086273129507E4C0097EDCD /* Header.swift */; };
 		D086273429507E9B0097EDCD /* LabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D086273329507E9B0097EDCD /* LabelTextField.swift */; };
 		D086273629508B930097EDCD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D086273529508B930097EDCD /* LoadingView.swift */; };
-		D092DDFB2951CC730051D496 /* GetTodoListTitleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092DDFA2951CC730051D496 /* GetTodoListTitleService.swift */; };
+		D092DDFB2951CC730051D496 /* TodoListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092DDFA2951CC730051D496 /* TodoListService.swift */; };
 		D092DDFD2951CD150051D496 /* TodoDataStringMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092DDFC2951CD150051D496 /* TodoDataStringMapper.swift */; };
 		D092DE032951DC7F0051D496 /* AddPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092DE022951DC7F0051D496 /* AddPageViewModel.swift */; };
 		D092DE052951DDC30051D496 /* TodoStringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092DE042951DDC30051D496 /* TodoStringModel.swift */; };
@@ -37,6 +37,8 @@
 		D092DE092951DEF30051D496 /* TodoTodoStringModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092DE082951DEF30051D496 /* TodoTodoStringModelMapper.swift */; };
 		D092DE0B2951DF050051D496 /* TodoTodoModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092DE0A2951DF050051D496 /* TodoTodoModelMapper.swift */; };
 		D092DE0F2951E84F0051D496 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092DE0E2951E84F0051D496 /* extensions.swift */; };
+		D092DE17295332F90051D496 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092DE16295332F90051D496 /* DetailView.swift */; };
+		D092DE19295336D70051D496 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092DE18295336D70051D496 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +84,7 @@
 		D086273129507E4C0097EDCD /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		D086273329507E9B0097EDCD /* LabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextField.swift; sourceTree = "<group>"; };
 		D086273529508B930097EDCD /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		D092DDFA2951CC730051D496 /* GetTodoListTitleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTodoListTitleService.swift; sourceTree = "<group>"; };
+		D092DDFA2951CC730051D496 /* TodoListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListService.swift; sourceTree = "<group>"; };
 		D092DDFC2951CD150051D496 /* TodoDataStringMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataStringMapper.swift; sourceTree = "<group>"; };
 		D092DE022951DC7F0051D496 /* AddPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPageViewModel.swift; sourceTree = "<group>"; };
 		D092DE042951DDC30051D496 /* TodoStringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoStringModel.swift; sourceTree = "<group>"; };
@@ -90,6 +92,8 @@
 		D092DE082951DEF30051D496 /* TodoTodoStringModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTodoStringModelMapper.swift; sourceTree = "<group>"; };
 		D092DE0A2951DF050051D496 /* TodoTodoModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTodoModelMapper.swift; sourceTree = "<group>"; };
 		D092DE0E2951E84F0051D496 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		D092DE16295332F90051D496 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		D092DE18295336D70051D496 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,7 @@
 			children = (
 				D08626CD294DCFB40097EDCD /* MainPageViewModel.swift */,
 				D092DE022951DC7F0051D496 /* AddPageViewModel.swift */,
+				D092DE18295336D70051D496 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				D08626C4294DC09B0097EDCD /* MainPageView.swift */,
+				D092DE16295332F90051D496 /* DetailView.swift */,
 				D086272E29507C3C0097EDCD /* AddPage.swift */,
 				D086273529508B930097EDCD /* LoadingView.swift */,
 			);
@@ -284,7 +290,7 @@
 		D08627AB295095E70097EDCD /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				D092DDFA2951CC730051D496 /* GetTodoListTitleService.swift */,
+				D092DDFA2951CC730051D496 /* TodoListService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -442,12 +448,14 @@
 				D086273229507E4C0097EDCD /* Header.swift in Sources */,
 				D08626D4294E17430097EDCD /* TodoModel.swift in Sources */,
 				D08626CE294DCFB40097EDCD /* MainPageViewModel.swift in Sources */,
+				D092DE19295336D70051D496 /* DetailViewModel.swift in Sources */,
 				D086273629508B930097EDCD /* LoadingView.swift in Sources */,
 				D092DE072951DE960051D496 /* TodoDataMapper.swift in Sources */,
 				D08530C8294BF18500777EED /* ContentView.swift in Sources */,
+				D092DE17295332F90051D496 /* DetailView.swift in Sources */,
 				D08626DD294E23120097EDCD /* PersistenceController.swift in Sources */,
 				D08626C3294DB2840097EDCD /* IconView.swift in Sources */,
-				D092DDFB2951CC730051D496 /* GetTodoListTitleService.swift in Sources */,
+				D092DDFB2951CC730051D496 /* TodoListService.swift in Sources */,
 				D08626CC294DC8620097EDCD /* TextExtension.swift in Sources */,
 				D092DE052951DDC30051D496 /* TodoStringModel.swift in Sources */,
 				D092DE032951DC7F0051D496 /* AddPageViewModel.swift in Sources */,
